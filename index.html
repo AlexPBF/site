@@ -115,8 +115,26 @@ footer { background:#7b8a76; color:#fff; text-align:center; padding:20px; font-s
 /* TEMA ESCURO */
 body.dark { --bg-color:#121212; --text-color:#f5f5f5; --card-bg:#1e1e1e; --card-shadow: rgba(0,0,0,0.5); --link-color:#ddd; --link-hover:#7b8a76; }
 
-/* RESPONSIVIDADE */
-@media (max-width:768px){ header h1{font-size:2rem;} section h2{font-size:1.5rem;} .about{flex-direction:column; text-align:center;} }
+/* Seção About Me responsiva */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;       /* Empilha imagem e texto */
+    align-items: center;          /* Centraliza horizontalmente */
+    text-align: center;           /* Centraliza o texto */
+    gap: 20px;                    /* Espaçamento entre imagem e texto */
+  }
+
+  .about img {
+    max-width: 80%;               /* Reduz a imagem proporcionalmente */
+    height: auto;
+  }
+
+  .about p {
+    max-width: 90%;               /* Evita que o texto fique muito largo */
+    font-size: 1rem;              /* Ajusta o tamanho do texto */
+  }
+}
+
 
 
 .socials img {
@@ -308,3 +326,4 @@ btnIdioma.addEventListener('click', () => {
 
 </body>
 </html>
+
