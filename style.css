@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s;
+}
+
+:root {
+  --bg: #fff;
+  --text: #333;
+  --accent: #0066cc;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #eee;
+  --accent: #4dabf7;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.lang-switch button {
+  margin: 0 3px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+}
+
+.about img {
+  border-radius: 50%;
+  max-width: 250px;
+  height: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .about { flex-direction: column; text-align: center; }
+  .nav-links { flex-direction: column; gap: 10px; }
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-item { width: 100%; cursor: pointer; border-radius: 8px; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center; align-items: center;
+}
+
+.modal-content {
+  max-width: 90%; max-height: 80%;
+}
+
+.modal-nav {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex; justify-content: space-between;
+  padding: 0 40px;
+}
+
+.close {
+  position: absolute; top: 15px; right: 25px;
+  color: white; font-size: 35px;
+  cursor: pointer;
+}

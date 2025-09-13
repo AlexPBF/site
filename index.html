@@ -1,329 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Professional Massage</title>
-<style>
-/* ================= VARIÁVEIS DE COR ================= */
-:root {
-  --bg-color: #fefcf6;
-  --text-color: #333;
-  --card-bg: #ffffff;
-  --card-shadow: rgba(0,0,0,0.1);
-  --link-color: #555;
-  --link-hover: #a3c9a8;
-}
-
-/* ================= ESTILO GERAL ================= */
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  scroll-behavior: smooth;
-  transition: background-color 0.3s, color 0.3s;
-}
-a { color: var(--link-color); text-decoration: none; transition: color 0.3s; }
-a:hover { color: var(--link-hover); }
-
-/* ================= NAVBAR ================= */
-nav {
-  position: sticky;
-  top: 0;
-  background: #ffffffcc;
-  padding: 15px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-  backdrop-filter: blur(5px);
-  z-index: 100;
-}
-nav a, nav button { margin: 0 10px; padding: 8px 12px; border-radius: 20px; font-weight: bold; border: none; cursor: pointer; }
-nav a:hover { background: var(--link-hover); color: #fff; }
-nav button { background: var(--link-hover); color: #fff; transition: background 0.3s; }
-nav button:hover { background: #7b8a76; }
-
-/* ================= HEADER ================= */
-header {
-  background: url('https://images.pexels.com/photos/3865792/pexels-photo-3865792.jpeg') center/cover no-repeat fixed;
-  color: #fff;
-  padding: 120px 20px;
-  text-align: center;
-  position: relative;
-}
-header::after { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(163,201,168,0.6); }
-header h1, header p { position: relative; z-index: 1; }
-header h1 { font-size: 3rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; }
-header p { font-size: 1.2rem; }
-
-/* ================= SEÇÕES ================= */
-section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-section h2 { text-align: center; margin-bottom: 30px; color: #7b8a76; font-size: 2rem; }
-
-/* ================= SOBRE ================= */
-.about { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; background: var(--card-bg); padding: 30px; border-radius: 15px; box-shadow: 0 4px 12px var(--card-shadow); }
-.about img { max-width: 300px; border-radius: 15px; flex:1 1 300px; }
-.about p { flex:2 1 300px; font-size:1.1rem; color: var(--text-color); }
-
-/* ================= SERVIÇOS ================= */
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-.card { background: var(--card-bg); padding: 20px; border-radius:15px; text-align:center; box-shadow:0 6px 20px var(--card-shadow); transition: transform 0.3s, box-shadow 0.3s; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
-.card img { width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:15px; }
-.card h3 { color:#7b8a76; margin-bottom:10px; }
-.card p { color:#666; font-size:1rem; }
-
-/* ================= GALERIA PREMIUM ================= */
-.galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:15px; justify-items: center; }
-.galeria img {
-  width:100px; height:100px; object-fit:cover; border-radius:50%; cursor:pointer;
-  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
-}
-.galeria img:hover { transform:scale(1.1); box-shadow:0 6px 20px rgba(0,0,0,0.3); filter: brightness(1.1); }
-
-/* MODAL COM FADE */
-.modal { display:none; position:fixed; z-index:1000; padding-top:60px; left:0; top:0; width:100%; height:100%; overflow:auto; background-color: rgba(0,0,0,0.85); animation: fadeIn 0.3s; }
-.modal:target { display:block; }
-.modal img { display:block; margin:auto; max-width:80%; max-height:70%; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.4); }
-.modal .caption { text-align:center; color:#fff; margin-top:10px; font-size:1.1rem; }
-
-/* CLOSE */
-.modal .close { position:absolute; top:20px; right:35px; color:#fff; font-size:40px; text-decoration:none; font-weight:bold; }
-.modal .close:hover { color:#bbb; }
-
-/* NAVEGAÇÃO MODAL */
-.modal .nav { position:absolute; top:50%; color:#fff; font-size:50px; text-decoration:none; font-weight:bold; padding:10px; background: rgba(0,0,0,0.3); border-radius:50%; transform:translateY(-50%); transition: background 0.3s; }
-.modal .nav:hover { background: rgba(0,0,0,0.6); }
-.modal .prev { left:15px; } .modal .next { right:15px; }
-
-/* FADE ANIMAÇÃO */
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-
-/* ================= GOOGLE MAPS ================= */
-.map-container { margin-top:40px; width:100%; height:400px; border-radius:15px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.2); }
-
-/* ================= FORM ================= */
-form { max-width:500px; margin:30px auto 0 auto; display:flex; flex-direction:column; gap:15px; }
-form input, form textarea { padding:12px; border:1px solid #ccc; border-radius:10px; font-size:1rem; width:100%; transition:border 0.3s; }
-form input:focus, form textarea:focus { border-color:#a3c9a8; outline:none; }
-form button { padding:12px; background:#7b8a76; color:#fff; border:none; border-radius:10px; cursor:pointer; font-size:1rem; transition:background 0.3s; }
-form button:hover { background:#5e6b5d; }
-
-/* FOOTER */
-footer { background:#7b8a76; color:#fff; text-align:center; padding:20px; font-size:0.9rem; margin-top:40px; }
-
-/* TEMA ESCURO */
-body.dark { --bg-color:#121212; --text-color:#f5f5f5; --card-bg:#1e1e1e; --card-shadow: rgba(0,0,0,0.5); --link-color:#ddd; --link-hover:#7b8a76; }
-
-/* Seção About Me responsiva */
-@media (max-width: 768px) {
-  .about {
-    flex-direction: column;       /* Empilha imagem e texto */
-    align-items: center;          /* Centraliza horizontalmente */
-    text-align: center;           /* Centraliza o texto */
-    gap: 20px;                    /* Espaçamento entre imagem e texto */
-  }
-
-  .about img {
-    max-width: 80%;               /* Reduz a imagem proporcionalmente */
-    height: auto;
-  }
-
-  .about p {
-    max-width: 90%;               /* Evita que o texto fique muito largo */
-    font-size: 1rem;              /* Ajusta o tamanho do texto */
-  }
-}
-
-
-
-.socials img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.socials img:hover {
-  transform: scale(1.2);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Massage UK</title>
+  <meta name="description" content="Professional massage services in the UK. Relaxation, therapy and wellness. Book your session today.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- ================= NAVBAR ================= -->
-<nav>
-  <a href="#sobre" class="lang" data-en="About" data-fr="À propos">About</a>
-  <a href="#servicos" class="lang" data-en="Services" data-fr="Services">Services</a>
-  <a href="#fotos" class="lang" data-en="Gallery" data-fr="Galerie">Gallery</a>
-  <a href="#contato" class="lang" data-en="Contact" data-fr="Contact">Contact</a>
-  <button id="btnTema">🌙 Dark Mode</button>
-  <button id="btnIdioma">FR</button>
-</nav>
-
-<!-- ================= HEADER ================= -->
-<header>
-  <h1 class="lang" data-en="Professional Massage" data-fr="Massage Professionnelle">Professional Massage</h1>
-  <p class="lang" data-en="Relax and rejuvenate with our expert massage services." data-fr="Détendez-vous et rajeunissez avec nos services de massage experts.">
-    Relax and rejuvenate with our expert massage services.
-  </p>
-</header>
-
-<!-- ================= SOBRE ================= -->
-<section id="sobre">
-  <h2 class="lang" data-en="About Me" data-fr="À propos de moi">About Me</h2>
-  <div class="about">
-    <img src="https://picsum.photos/300/300?random=11" alt="Therapist">
-    <p class="lang" data-en="I am a certified massage therapist with years of experience helping clients relax and heal." 
-       data-fr="Je suis un thérapeute de massage certifié avec des années d'expérience pour aider les clients à se détendre et à guérir.">
-      I am a certified massage therapist with years of experience helping clients relax and heal.
-    </p>
-  </div>
-</section>
-
-<!-- ================= SERVIÇOS ================= -->
-<section id="servicos">
-  <h2 class="lang" data-en="Services" data-fr="Services">Services</h2>
-  <div class="services">
-    <div class="card">
-      <img src="https://picsum.photos/400/250?random=21" alt="Relaxing Massage">
-      <h3 class="lang" data-en="Relaxing Massage" data-fr="Massage Relaxant">Relaxing Massage</h3>
-      <p class="lang" data-en="Gentle massage to relieve stress and tension." data-fr="Massage doux pour soulager le stress et la tension.">
-        Gentle massage to relieve stress and tension.
-      </p>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Professional Massage</div>
+    <ul class="nav-links">
+      <li><a href="#about" data-translate="nav.about">About Me</a></li>
+      <li><a href="#services" data-translate="nav.services">Services</a></li>
+      <li><a href="#gallery" data-translate="nav.gallery">Gallery</a></li>
+      <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+    </ul>
+    <div class="controls">
+      <div class="lang-switch">
+        <button onclick="setLanguage('en')">🇬🇧</button>
+        <button onclick="setLanguage('pt')">🇧🇷</button>
+        <button onclick="setLanguage('fr')">🇫🇷</button>
+      </div>
+      <button id="theme-toggle">🌙</button>
     </div>
-    <div class="card">
-      <img src="https://picsum.photos/400/250?random=22" alt="Therapeutic Massage">
-      <h3 class="lang" data-en="Therapeutic Massage" data-fr="Massage Thérapeutique">Therapeutic Massage</h3>
-      <p class="lang" data-en="Targeted massage to alleviate pain and improve mobility." data-fr="Massage ciblé pour soulager la douleur et améliorer la mobilité.">
-        Targeted massage to alleviate pain and improve mobility.
-      </p>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1 data-translate="hero.title">Relaxation & Therapeutic Massage in the UK</h1>
+    <p data-translate="hero.text">Experience professional massage services focused on your well-being, balance and renewal.</p>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <img src="https://source.unsplash.com/400x400/?massage,therapist" alt="Massage therapist portrait">
+    <div>
+      <h2 data-translate="about.title">About Me</h2>
+      <p data-translate="about.text">I am a certified massage therapist based in the UK, offering relaxation, therapeutic and wellness massage services.</p>
     </div>
-    <div class="card">
-      <img src="https://picsum.photos/400/250?random=23" alt="Aromatherapy">
-      <h3 class="lang" data-en="Aromatherapy" data-fr="Aromathérapie">Aromatherapy</h3>
-      <p class="lang" data-en="Using essential oils for relaxation and wellness." data-fr="Utilisation d'huiles essentielles pour la détente et le bien-être.">
-        Using essential oils for relaxation and wellness.
-      </p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <h2 data-translate="services.title">Services</h2>
+    <ul>
+      <li data-translate="services.item1">Relaxation Massage</li>
+      <li data-translate="services.item2">Therapeutic Massage</li>
+      <li data-translate="services.item3">Aromatherapy Massage</li>
+      <li data-translate="services.item4">Wellness Massage</li>
+    </ul>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <h2 data-translate="gallery.title">Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://source.unsplash.com/400x300/?massage,therapy" alt="Therapeutic massage" class="gallery-item" loading="lazy">
+      <img src="https://source.unsplash.com/400x300/?spa,relax" alt="Spa relaxation" class="gallery-item" loading="lazy">
+      <img src="https://source.unsplash.com/400x300/?wellness,healing" alt="Wellness massage" class="gallery-item" loading="lazy">
+      <img src="https://source.unsplash.com/400x300/?aromatherapy,candles" alt="Aromatherapy massage" class="gallery-item" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2 data-translate="contact.title">Contact</h2>
+    <div class="social-icons">
+      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/telegram.svg" alt="Telegram"></a>
+      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/viber.svg" alt="Viber"></a>
+      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/paypal.svg" alt="Donate with PayPal"></a>
+      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/patreon.svg" alt="Support on Patreon"></a>
+    </div>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
+    </div>
+  </section>
+
+  <!-- Modal for Gallery -->
+  <div id="image-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+    <div class="modal-nav">
+      <button id="prev">⟨</button>
+      <button id="next">⟩</button>
     </div>
   </div>
-</section>
 
-<!-- ================= GALERIA PREMIUM ================= -->
-<section id="fotos">
-  <h2 class="lang" data-en="Gallery" data-fr="Galerie">Gallery</h2>
-  <div class="galeria">
-    <a href="#img1"><img src="https://picsum.photos/100/100?random=31" alt="Foto 1"></a>
-    <a href="#img2"><img src="https://picsum.photos/100/100?random=32" alt="Foto 2"></a>
-    <a href="#img3"><img src="https://picsum.photos/100/100?random=33" alt="Foto 3"></a>
-    <a href="#img4"><img src="https://picsum.photos/100/100?random=34" alt="Foto 4"></a>
-  </div>
-
-  <!-- MODAIS COM LEGENDA -->
-  <div id="img1" class="modal">
-    <a href="#fechar" class="close">&times;</a>
-    <a href="#img4" class="nav prev">&#10094;</a>
-    <a href="#img2" class="nav next">&#10095;</a>
-    <img src="https://picsum.photos/800/600?random=31" alt="Foto 1">
-    <div class="caption">Relaxing ambiance</div>
-  </div>
-  <div id="img2" class="modal">
-    <a href="#fechar" class="close">&times;</a>
-    <a href="#img1" class="nav prev">&#10094;</a>
-    <a href="#img3" class="nav next">&#10095;</a>
-    <img src="https://picsum.photos/800/600?random=32" alt="Foto 2">
-    <div class="caption">Therapy in action</div>
-  </div>
-  <div id="img3" class="modal">
-    <a href="#fechar" class="close">&times;</a>
-    <a href="#img2" class="nav prev">&#10094;</a>
-    <a href="#img4" class="nav next">&#10095;</a>
-    <img src="https://picsum.photos/800/600?random=33" alt="Foto 3">
-    <div class="caption">Aromatherapy oils</div>
-  </div>
-  <div id="img4" class="modal">
-    <a href="#fechar" class="close">&times;</a>
-    <a href="#img3" class="nav prev">&#10094;</a>
-    <a href="#img1" class="nav next">&#10095;</a>
-    <img src="https://picsum.photos/800/600?random=34" alt="Foto 4">
-    <div class="caption">Client relaxation</div>
-  </div>
-  <a id="fechar"></a>
-</section>
-
-<!-- ================= GOOGLE MAPS ================= -->
-<section id="localizacao">
-  <h2 class="lang" data-en="Find Me" data-fr="Me Trouver">Find Me</h2>
-  <div class="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.8920193847875!2d-0.12775848418253547!3d51.5073502796344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3333333333%3A0xabcdef1234567890!2sLondon%2C%20UK!5e0!3m2!1sen!2sfr!4v1694457600000!5m2!1sen!2sfr" 
-      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-</section>
-
-<!-- ================= CONTATO ================= -->
-<section id="contato">
-  <h2 class="lang" data-en="Contact Me" data-fr="Contactez-moi">Contact Me</h2>
-  <div class="socials" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:30px;">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com" target="_blank" style="text-decoration:none;">
-      <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" />
-    </a>
-    <!-- Facebook -->
-    <a href="https://www.facebook.com" target="_blank" style="text-decoration:none;">
-      <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook" />
-    </a>
-    <!-- WhatsApp -->
-    <a href="https://wa.me/1234567890" target="_blank" style="text-decoration:none;">
-      <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" />
-    </a>
-    <!-- Viber -->
-    <a href="viber://chat?number=+1234567890" target="_blank" style="text-decoration:none;">
-      <img src="https://img.icons8.com/color/48/000000/viber.png" alt="Viber" />
-    </a>
-    <!-- Telegram -->
-    <a href="https://t.me/username" target="_blank" style="text-decoration:none;">
-      <img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram" />
-    </a>
-    <!-- PayPal Doação -->
-    <a href="https://www.paypal.com/donate" target="_blank" style="text-decoration:none;">
-      <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" />
-    </a>
-    <!-- Patreon -->
-    <a href="https://www.patreon.com" target="_blank" style="text-decoration:none;">
-      <img src="https://img.icons8.com/color/48/000000/patreon.png" alt="Patreon" />
-    </a>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  &copy; 2025 <span class="lang" data-en="All rights reserved" data-fr="Tous droits réservés">All rights reserved</span>
-</footer>
-
-<!-- ================= JS ================= -->
-<script>
-// Tema Escuro
-const btnTema = document.getElementById('btnTema');
-btnTema.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  btnTema.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
-});
-
-// Alternância de Idioma
-const btnIdioma = document.getElementById('btnIdioma');
-btnIdioma.addEventListener('click', () => {
-  const lang = btnIdioma.textContent === 'FR' ? 'fr' : 'en';
-  document.querySelectorAll('.lang').forEach(el => {
-    el.textContent = el.getAttribute(`data-${lang}`);
-  });
-  btnIdioma.textContent = lang === 'fr' ? 'EN' : 'FR';
-});
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
