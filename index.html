@@ -1,96 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Massage UK</title>
-  <meta name="description" content="Professional massage services in the UK. Relaxation, therapy and wellness. Book your session today.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Massage</title>
+<meta name="description" content="Professional massage services in the UK. Relaxation, therapeutic and wellness massage. Book your session today.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Professional Massage</div>
-    <ul class="nav-links">
-      <li><a href="#about" data-translate="nav.about">About Me</a></li>
-      <li><a href="#services" data-translate="nav.services">Services</a></li>
-      <li><a href="#gallery" data-translate="nav.gallery">Gallery</a></li>
-      <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
-    </ul>
-    <div class="controls">
-      <div class="lang-switch">
-        <button onclick="setLanguage('en')">🇬🇧</button>
-        <button onclick="setLanguage('pt')">🇧🇷</button>
-        <button onclick="setLanguage('fr')">🇫🇷</button>
-      </div>
-      <button id="theme-toggle">🌙</button>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#sobre" class="lang" data-en="About" data-fr="À propos">About</a>
+  <a href="#servicos" class="lang" data-en="Services" data-fr="Services">Services</a>
+  <a href="#fotos" class="lang" data-en="Gallery" data-fr="Galerie">Gallery</a>
+  <a href="#contato" class="lang" data-en="Contact" data-fr="Contact">Contact</a>
+  <button id="btnTema">🌙 Dark Mode</button>
+  <button id="btnIdioma">FR</button>
+</nav>
+
+<!-- HEADER -->
+<header>
+  <div class="header-overlay"></div>
+  <h1 class="lang" data-en="Professional Massage" data-fr="Massage Professionnelle">Professional Massage</h1>
+  <p class="lang" data-en="Relax and rejuvenate with our expert massage services." data-fr="Détendez-vous et rajeunissez avec nos services de massage experts.">
+    Relax and rejuvenate with our expert massage services.
+  </p>
+</header>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <h2 class="lang" data-en="About Me" data-fr="À propos de moi">About Me</h2>
+  <div class="about">
+    <img src="https://picsum.photos/300/300?random=2" alt="Therapist">
+    <p class="lang" data-en="I am a certified massage therapist with years of experience helping clients relax and heal." 
+       data-fr="Je suis un thérapeute de massage certifié avec des années d'expérience pour aider les clients à se détendre et à guérir.">
+      I am a certified massage therapist with years of experience helping clients relax and heal.
+    </p>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <h2 class="lang" data-en="Services" data-fr="Services">Services</h2>
+  <div class="services">
+    <div class="card">
+      <img src="https://picsum.photos/400/250?random=3" alt="Relaxing Massage">
+      <h3 class="lang" data-en="Relaxing Massage" data-fr="Massage Relaxant">Relaxing Massage</h3>
+      <p class="lang" data-en="Gentle massage to relieve stress and tension." data-fr="Massage doux pour soulager le stress et la tension.">
+        Gentle massage to relieve stress and tension.
+      </p>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero">
-    <h1 data-translate="hero.title">Relaxation & Therapeutic Massage in the UK</h1>
-    <p data-translate="hero.text">Experience professional massage services focused on your well-being, balance and renewal.</p>
-  </header>
-
-  <!-- About -->
-  <section id="about" class="about">
-    <img src="https://source.unsplash.com/400x400/?massage,therapist" alt="Massage therapist portrait">
-    <div>
-      <h2 data-translate="about.title">About Me</h2>
-      <p data-translate="about.text">I am a certified massage therapist based in the UK, offering relaxation, therapeutic and wellness massage services.</p>
+    <div class="card">
+      <img src="https://picsum.photos/400/250?random=4" alt="Therapeutic Massage">
+      <h3 class="lang" data-en="Therapeutic Massage" data-fr="Massage Thérapeutique">Therapeutic Massage</h3>
+      <p class="lang" data-en="Targeted massage to alleviate pain and improve mobility." data-fr="Massage ciblé pour soulager la douleur et améliorer la mobilité.">
+        Targeted massage to alleviate pain and improve mobility.
+      </p>
     </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="services">
-    <h2 data-translate="services.title">Services</h2>
-    <ul>
-      <li data-translate="services.item1">Relaxation Massage</li>
-      <li data-translate="services.item2">Therapeutic Massage</li>
-      <li data-translate="services.item3">Aromatherapy Massage</li>
-      <li data-translate="services.item4">Wellness Massage</li>
-    </ul>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery" class="gallery">
-    <h2 data-translate="gallery.title">Gallery</h2>
-    <div class="gallery-grid">
-      <img src="https://source.unsplash.com/400x300/?massage,therapy" alt="Therapeutic massage" class="gallery-item" loading="lazy">
-      <img src="https://source.unsplash.com/400x300/?spa,relax" alt="Spa relaxation" class="gallery-item" loading="lazy">
-      <img src="https://source.unsplash.com/400x300/?wellness,healing" alt="Wellness massage" class="gallery-item" loading="lazy">
-      <img src="https://source.unsplash.com/400x300/?aromatherapy,candles" alt="Aromatherapy massage" class="gallery-item" loading="lazy">
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2 data-translate="contact.title">Contact</h2>
-    <div class="social-icons">
-      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg" alt="Instagram"></a>
-      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/facebook.svg" alt="Facebook"></a>
-      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/whatsapp.svg" alt="WhatsApp"></a>
-      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/telegram.svg" alt="Telegram"></a>
-      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/viber.svg" alt="Viber"></a>
-      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/paypal.svg" alt="Donate with PayPal"></a>
-      <a href="#"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/patreon.svg" alt="Support on Patreon"></a>
-    </div>
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
-    </div>
-  </section>
-
-  <!-- Modal for Gallery -->
-  <div id="image-modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
-    <div class="modal-nav">
-      <button id="prev">⟨</button>
-      <button id="next">⟩</button>
+    <div class="card">
+      <img src="https://picsum.photos/400/250?random=5" alt="Aromatherapy">
+      <h3 class="lang" data-en="Aromatherapy" data-fr="Aromathérapie">Aromatherapy</h3>
+      <p class="lang" data-en="Using essential oils for relaxation and wellness." data-fr="Utilisation d'huiles essentielles pour la détente et le bien-être.">
+        Using essential oils for relaxation and wellness.
+      </p>
     </div>
   </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- GALERIA -->
+<section id="fotos">
+  <h2 class="lang" data-en="Gallery" data-fr="Galerie">Gallery</h2>
+  <div class="galeria">
+    <img src="https://picsum.photos/100/100?random=6" alt="Foto 1" class="gallery-item">
+    <img src="https://picsum.photos/100/100?random=7" alt="Foto 2" class="gallery-item">
+    <img src="https://picsum.photos/100/100?random=8" alt="Foto 3" class="gallery-item">
+    <img src="https://picsum.photos/100/100?random=9" alt="Foto 4" class="gallery-item">
+  </div>
+</section>
+
+<!-- GOOGLE MAPS -->
+<section id="localizacao">
+  <h2 class="lang" data-en="Find Me" data-fr="Me Trouver">Find Me</h2>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.8920193847875!2d-0.12775848418253547!3d51.5073502796344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3333333333%3A0xabcdef1234567890!2sLondon%2C%20UK!5e0!3m2!1sen!2sfr!4v1694457600000!5m2!1sen!2sfr" 
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <h2 class="lang" data-en="Contact Me" data-fr="Contactez-moi">Contact Me</h2>
+  <div class="socials">
+    <a href="https://www.instagram.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" /></a>
+    <a href="https://www.facebook.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook" /></a>
+    <a href="https://wa.me/1234567890" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" /></a>
+    <a href="viber://chat?number=+1234567890" target="_blank"><img src="https://img.icons8.com/color/48/000000/viber.png" alt="Viber" /></a>
+    <a href="https://t.me/username" target="_blank"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram" /></a>
+    <a href="https://www.paypal.com/donate" target="_blank"><img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" /></a>
+    <a href="https://www.patreon.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/patreon.png" alt="Patreon" /></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2025 <span class="lang" data-en="All rights reserved" data-fr="Tous droits réservés">All rights reserved</span>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
