@@ -1,64 +1,114 @@
+<!DOCTYPE html>
 <html lang="en">
-<h3 class="lang" data-en="Relaxing Massage" data-fr="Massage Relaxant">Relaxing Massage</h3>
-<p class="lang" data-en="Gentle massage to relieve stress and tension." data-fr="Massage doux pour soulager le stress et la tension.">Gentle massage to relieve stress and tension.</p>
-</article>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Massage</title>
+<meta name="description" content="Professional massage services in the UK. Relaxation, therapeutic and wellness massage. Book your session today.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- NAVBAR -->
+<nav>
+  <a href="#sobre" class="lang" data-en="About" data-fr="À propos">About</a>
+  <a href="#servicos" class="lang" data-en="Services" data-fr="Services">Services</a>
+  <a href="#fotos" class="lang" data-en="Gallery" data-fr="Galerie">Gallery</a>
+  <a href="#contato" class="lang" data-en="Contact" data-fr="Contact">Contact</a>
+  <button id="btnTema">🌙 Dark Mode</button>
+  <button id="btnIdioma">FR</button>
+</nav>
 
-<article class="card">
-<img src="https://picsum.photos/800/450?random=32" alt="Therapeutic Massage">
-<h3 class="lang" data-en="Therapeutic Massage" data-fr="Massage Thérapeutique">Therapeutic Massage</h3>
-<p class="lang" data-en="Targeted massage to alleviate pain and improve mobility." data-fr="Massage ciblé pour soulager la douleur et améliorer la mobilité.">Targeted massage to alleviate pain and improve mobility.</p>
-</article>
+<!-- HEADER -->
+<header>
+  <div class="header-overlay"></div>
+  <h1 class="lang" data-en="Professional Massage" data-fr="Massage Professionnelle">Professional Massage</h1>
+  <p class="lang" data-en="Relax and rejuvenate with our expert massage services." data-fr="Détendez-vous et rajeunissez avec nos services de massage experts.">
+    Relax and rejuvenate with our expert massage services.
+  </p>
+</header>
 
-
-<article class="card">
-<img src="https://picsum.photos/800/450?random=33" alt="Aromatherapy">
-<h3 class="lang" data-en="Aromatherapy" data-fr="Aromathérapie">Aromatherapy</h3>
-<p class="lang" data-en="Using essential oils for relaxation and wellness." data-fr="Utilisation d'huiles essentielles pour la détente et le bien-être.">Using essential oils for relaxation and wellness.</p>
-</article>
-</div>
+<!-- SOBRE -->
+<section id="sobre">
+  <h2 class="lang" data-en="About Me" data-fr="À propos de moi">About Me</h2>
+  <div class="about">
+    <img src="https://picsum.photos/300/300?random=2" alt="Therapist">
+    <p class="lang" data-en="I am a certified massage therapist with years of experience helping clients relax and heal." 
+       data-fr="Je suis un thérapeute de massage certifié avec des années d'expérience pour aider les clients à se détendre et à guérir.">
+      I am a certified massage therapist with years of experience helping clients relax and heal.
+    </p>
+  </div>
 </section>
 
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <h2 class="lang" data-en="Services" data-fr="Services">Services</h2>
+  <div class="services">
+    <div class="card">
+      <img src="https://picsum.photos/400/250?random=3" alt="Relaxing Massage">
+      <h3 class="lang" data-en="Relaxing Massage" data-fr="Massage Relaxant">Relaxing Massage</h3>
+      <p class="lang" data-en="Gentle massage to relieve stress and tension." data-fr="Massage doux pour soulager le stress et la tension.">
+        Gentle massage to relieve stress and tension.
+      </p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/250?random=4" alt="Therapeutic Massage">
+      <h3 class="lang" data-en="Therapeutic Massage" data-fr="Massage Thérapeutique">Therapeutic Massage</h3>
+      <p class="lang" data-en="Targeted massage to alleviate pain and improve mobility." data-fr="Massage ciblé pour soulager la douleur et améliorer la mobilité.">
+        Targeted massage to alleviate pain and improve mobility.
+      </p>
+    </div>
+    <div class="card">
+      <img src="https://picsum.photos/400/250?random=5" alt="Aromatherapy">
+      <h3 class="lang" data-en="Aromatherapy" data-fr="Aromathérapie">Aromatherapy</h3>
+      <p class="lang" data-en="Using essential oils for relaxation and wellness." data-fr="Utilisation d'huiles essentielles pour la détente et le bien-être.">
+        Using essential oils for relaxation and wellness.
+      </p>
+    </div>
+  </div>
+</section>
 
+<!-- GALERIA -->
 <section id="fotos">
-<h2 class="lang" data-en="Gallery" data-fr="Galerie">Gallery</h2>
-<div class="galeria" aria-hidden="false">
-<img src="https://picsum.photos/300/200?random=41" alt="Foto 1" class="gallery-item">
-<img src="https://picsum.photos/300/200?random=42" alt="Foto 2" class="gallery-item">
-<img src="https://picsum.photos/300/200?random=43" alt="Foto 3" class="gallery-item">
-<img src="https://picsum.photos/300/200?random=44" alt="Foto 4" class="gallery-item">
-</div>
+  <h2 class="lang" data-en="Gallery" data-fr="Galerie">Gallery</h2>
+  <div class="galeria">
+    <img src="https://picsum.photos/100/100?random=6" alt="Foto 1" class="gallery-item">
+    <img src="https://picsum.photos/100/100?random=7" alt="Foto 2" class="gallery-item">
+    <img src="https://picsum.photos/100/100?random=8" alt="Foto 3" class="gallery-item">
+    <img src="https://picsum.photos/100/100?random=9" alt="Foto 4" class="gallery-item">
+  </div>
 </section>
 
-
+<!-- GOOGLE MAPS -->
 <section id="localizacao">
-<h2 class="lang" data-en="Find Me" data-fr="Me Trouver">Find Me</h2>
-<div class="map-container">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.8920193847875!2d-0.12775848418253547!3d51.5073502796344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3333333333%3A0xabcdef1234567890!2sLondon%2C%20UK!5e0!3m2!1sen!2sfr!4v1694457600000!5m2!1sen!2sfr" width="100%" height="400" style="border:0;display:block" allowfullscreen="" loading="lazy"></iframe>
-</div>
+  <h2 class="lang" data-en="Find Me" data-fr="Me Trouver">Find Me</h2>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.8920193847875!2d-0.12775848418253547!3d51.5073502796344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3333333333%3A0xabcdef1234567890!2sLondon%2C%20UK!5e0!3m2!1sen!2sfr!4v1694457600000!5m2!1sen!2sfr" 
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
 </section>
 
-
+<!-- CONTATO -->
 <section id="contato">
-<h2 class="lang" data-en="Contact Me" data-fr="Contactez-moi">Contact Me</h2>
-<div class="socials">
-<a href="https://www.instagram.com" target="_blank" rel="noopener"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" /></a>
-<a href="https://www.facebook.com" target="_blank" rel="noopener"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook" /></a>
-<a href="https://wa.me/1234567890" target="_blank" rel="noopener"><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" /></a>
-<a href="viber://chat?number=+1234567890" target="_blank" rel="noopener"><img src="https://img.icons8.com/color/48/000000/viber.png" alt="Viber" /></a>
-<a href="https://t.me/username" target="_blank" rel="noopener"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram" /></a>
-<a href="https://www.paypal.com/donate" target="_blank" rel="noopener"><img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" /></a>
-<a href="https://www.patreon.com" target="_blank" rel="noopener"><img src="https://img.icons8.com/color/48/000000/patreon.png" alt="Patreon" /></a>
-</div>
+  <h2 class="lang" data-en="Contact Me" data-fr="Contactez-moi">Contact Me</h2>
+  <div class="socials">
+    <a href="https://www.instagram.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" /></a>
+    <a href="https://www.facebook.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook" /></a>
+    <a href="https://wa.me/1234567890" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" /></a>
+    <a href="viber://chat?number=+1234567890" target="_blank"><img src="https://img.icons8.com/color/48/000000/viber.png" alt="Viber" /></a>
+    <a href="https://t.me/username" target="_blank"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram" /></a>
+    <a href="https://www.paypal.com/donate" target="_blank"><img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" /></a>
+    <a href="https://www.patreon.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/patreon.png" alt="Patreon" /></a>
+  </div>
 </section>
-</main>
 
-
+<!-- FOOTER -->
 <footer>
-&copy; 2025 <span class="lang" data-en="All rights reserved" data-fr="Tous droits réservés">All rights reserved</span>
+  &copy; 2025 <span class="lang" data-en="All rights reserved" data-fr="Tous droits réservés">All rights reserved</span>
 </footer>
 
-
-<script src="/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
