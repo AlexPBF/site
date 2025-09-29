@@ -173,13 +173,13 @@ body.dark {
   --link-hover:#a3c9a8; 
 }
 
-/* Overlay e texto header dark mode */
+/* Overlay e texto header dark mode — contraste melhorado */
 body.dark header .header-overlay {
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.75); /* mais escuro */
 }
 body.dark header h1,
 body.dark header p {
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* sombra mais forte */
 }
 
 /* ================= RESPONSIVIDADE ================= */
@@ -219,3 +219,4 @@ body.dark header p {
     color: var(--text-color) !important;
   }
 }
+
