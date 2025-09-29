@@ -6,6 +6,8 @@
   --card-shadow: rgba(0,0,0,0.1);
   --link-color: #555;
   --link-hover: #a3c9a8;
+  --header-text: #fff;
+  --muted-color: #666;
 }
 
 /* ================= ESTILO GERAL ================= */
@@ -25,28 +27,40 @@ a:focus, button:focus {
 }
 
 /* ================= NAVBAR ================= */
+/* Ajustado para evitar que itens cresçam no mobile e para suportar scroll horizontal */
 nav {
   position: sticky;
   top: 0;
   background: #ffffffcc;
-  padding: 15px;
-  text-align: center;
+  padding: 12px 10px;
   border-bottom: 1px solid #ddd;
   backdrop-filter: blur(5px);
   z-index: 100;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
+
+/* Cada item fica com largura natural (não cresce para 100%) */
 nav a, nav button {
-  margin: 5px;
-  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin: 0 6px;
+  padding: 8px 14px;
   border-radius: 20px;
-  font-weight: bold;
+  font-weight: 600;
   border: none;
   cursor: pointer;
+  background: transparent;
 }
+
+/* cores */
+nav a { color: var(--link-color); }
 nav a:hover { background: var(--link-hover); color: #fff; }
 nav button { background: var(--link-hover); color: #fff; transition: background 0.3s; }
 nav button:hover { background: #5c6e58; }
@@ -60,23 +74,25 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #fff;
+  color: var(--header-text);
   background: url('https://picsum.photos/1200/500?random=1') center/cover no-repeat;
 }
 
+/* overlay ajustável (escuro no tema dark) */
 header .header-overlay {
   position: absolute;
   top:0;
   left:0;
   width:100%;
   height:100%;
-  background: rgba(163,201,168,0.6); /* overlay semitransparente */
+  background: rgba(163,201,168,0.6); /* overlay semitransparente claro (light mode) */
   z-index:1;
 }
 
 header h1, header p {
   position: relative;
   z-index: 2;
+  color: var(--header-text);
 }
 
 header h1 {
@@ -109,7 +125,7 @@ section h2 { text-align: center; margin-bottom: 30px; color: #7b8a76; font-size:
 .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
 .card img { width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:15px; }
 .card h3 { color:#7b8a76; margin-bottom:10px; }
-.card p { color:#666; font-size:1rem; }
+.card p { color: var(--muted-color); font-size:1rem; }
 
 /* ================= GALERIA ================= */
 .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:15px; justify-items: center; }
@@ -169,7 +185,28 @@ body.dark {
   --card-bg:#1e1e1e; 
   --card-shadow: rgba(0,0,0,0.5); 
   --link-color:#ddd; 
-  --link-hover:#7b8a76; 
+  --link-hover:#7b8a76;
+  --header-text: #f5f5f5;
+  --muted-color: #cfcfcf;
+}
+
+/* Nav mais escura no tema dark (melhora contraste dos links) */
+body.dark nav {
+  background: rgba(8,8,8,0.6);
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+
+/* overlay do header mais escuro no modo dark para dar contraste ao texto */
+body.dark header .header-overlay {
+  background: rgba(0,0,0,0.45);
+}
+
+/* Forçar cores mais legíveis em dark */
+body.dark .card p,
+body.dark .about p,
+body.dark header p,
+body.dark .modal .caption {
+  color: var(--muted-color);
 }
 
 /* ================= RESPONSIVIDADE ================= */
@@ -177,5 +214,30 @@ body.dark {
   header h1{font-size:2rem;} 
   section h2{font-size:1.5rem;} 
   .about{flex-direction:column; text-align:center;} 
-  nav a, nav button{margin:5px; flex:1 1 40%; text-align:center;}
+  /* reduzir padding dos botões no mobile para não ocupar tanto espaço */
+  nav { padding: 8px; gap:6px; }
+  nav a, nav button { margin: 0 4px; padding: 6px 10px; font-size: 0.95rem; border-radius: 16px; }
+}
+
+/* opcional: esconder scroll bar visual em alguns browsers (limpa visual) */
+nav::-webkit-scrollbar { height: 8px; }
+nav::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 10px; }
+
+/* ================= AJUSTE ABOUT NO MOBILE ================= */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about img {
+    max-width: 90%;
+    height: auto;
+    flex: 0 0 auto; /* evita forçar largura */
+  }
+  .about p {
+    flex: 0 0 auto;
+    width: 100%;
+    font-size: 1rem;
+  }
 }
