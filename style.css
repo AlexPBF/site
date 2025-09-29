@@ -23,11 +23,9 @@ a:hover { color: var(--link-hover); }
 /* ================= NAVBAR ================= */
 nav {
   position: sticky;
-  top: 0;
-  background: #ffffffcc;
+  top: 0;  
   padding: 15px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
+  text-align: center;  
   backdrop-filter: blur(5px);
   z-index: 100;
   display: flex;
@@ -219,4 +217,5 @@ body.dark header p {
     color: var(--text-color) !important;
   }
 }
+
 
