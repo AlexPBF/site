@@ -91,3 +91,46 @@ document.addEventListener('keydown', (e) => {
 modal.addEventListener('click', (e) => {
   if (e.target === modal) closeModal();
 });
+
+//About Me
+const images = [
+  "img/O09A7268_page-0001.jpg",
+  "img/O09A7277_page-0001.jpg",
+  "img/O09A7280_page-0001.jpg",
+  "img/O09A7287_page-0001.jpg",
+  "img/O09A7292_page-0001.jpg",
+  "img/O09A7271_page-0001.jpg",
+  "img/O09A7268_page-0001.jpg",
+  "img/7d9ae849-d0ce-4007-9eab-eb5058c87f73.JPG",
+  "img/760a4d8a-483c-4bc3-aba6-dfe8ae7d6559.JPG",
+  "img/3313eeec-a737-4441-b47a-eabc19f1aad6.JPG",
+  "img/358633de-a1ae-4e60-aaec-52e254621ed6.JPG",
+  "img/e2a047da-7d31-4535-83e9-56e405fd7795.JPG",
+  "img/SAM00014.jpg"
+];
+
+// Função de hash simples baseada em string (alt)
+function hashString(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return Math.abs(hash);
+}
+
+// Função que aplica a imagem aleatória
+function setRandomImage(imgElement, deterministic = true) {
+  let index;
+  if (deterministic && imgElement.alt !== "RANDOM") {
+    // usa alt como “semente” para determinístico
+    const seed = hashString(imgElement.alt);
+    index = seed % images.length;
+  } else {
+    // aleatório puro
+    index = Math.floor(Math.random() * images.length);
+  }
+  imgElement.src = images[index];
+}
+
+// Aplica para todas imagens com id começando com "randomImg"
+document.querySelectorAll('img[id^="randomImg"]').forEach(img => setRandomImage(img));
