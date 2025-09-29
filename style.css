@@ -173,6 +173,15 @@ body.dark {
   --link-hover:#a3c9a8; 
 }
 
+/* Overlay e texto header dark mode */
+body.dark header .header-overlay {
+  background: rgba(0,0,0,0.65);
+}
+body.dark header h1,
+body.dark header p {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width:768px){
   section h2{font-size:1.5rem;} 
