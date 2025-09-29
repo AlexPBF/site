@@ -226,18 +226,21 @@ nav::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 10px
 /* ================= AJUSTE ABOUT NO MOBILE ================= */
 @media (max-width: 768px) {
   .about {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
     text-align: center;
   }
   .about img {
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    flex: 0 0 auto; /* evita forçar largura */
+    border-radius: 12px;
   }
   .about p {
-    flex: 0 0 auto;
     width: 100%;
     font-size: 1rem;
   }
 }
+
+
