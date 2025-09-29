@@ -32,7 +32,13 @@
 <section id="sobre">
   <h2 class="lang" data-en="About Me" data-fr="À propos de moi">About Me</h2>
   <div class="about">
-    <img id="randomImg" src="" alt="RANDOM">    
+    <div itemscope itemtype="https://schema.org/ImageObject">
+      <img id="randomImg" src=""
+           alt="Certified massage therapist with years of experience helping clients relax and recover" 
+           itemprop="contentUrl">
+      <meta itemprop="name" content="Certified Therapist">
+      <meta itemprop="description" content="Certified massage therapist with years of experience helping clients relax and recover">
+    </div>     
     <p class="lang" data-en="I am a certified massage therapist with years of experience helping clients relax and heal." 
        data-fr="Je suis un thérapeute de massage certifié avec des années d'expérience pour aider les clients à se détendre et à guérir.">
       I am a certified massage therapist with years of experience helping clients relax and heal.
@@ -44,22 +50,36 @@
 <section id="servicos">
   <h2 class="lang" data-en="Services" data-fr="Services">Services</h2>
   <div class="services">
-    <div class="card">
-      <img id="randomImg" src="" alt="Relaxing Massage">
+    <div class="card" itemscope itemtype="https://schema.org/ImageObject">
+      <img id="randomImg" src="" 
+           alt="Relaxing massage to relieve stress and tension" 
+           itemprop="contentUrl">
+      <meta itemprop="name" content="Relaxing Massage">
+      <meta itemprop="description" content="Gentle massage to relieve stress and tension">
       <h3 class="lang" data-en="Relaxing Massage" data-fr="Massage Relaxant">Relaxing Massage</h3>
       <p class="lang" data-en="Gentle massage to relieve stress and tension." data-fr="Massage doux pour soulager le stress et la tension.">
         Gentle massage to relieve stress and tension.
       </p>
     </div>
-    <div class="card">
-      <img id="randomImg" src="" alt="Therapeutic Massage">
+
+    <div class="card" itemscope itemtype="https://schema.org/ImageObject">
+      <img id="randomImg" src=""
+           alt="Therapeutic massage to relieve pain and improve mobility" 
+           itemprop="contentUrl">
+      <meta itemprop="name" content="Therapeutic Massage">
+      <meta itemprop="description" content="Targeted massage to relieve pain and improve mobility">
       <h3 class="lang" data-en="Therapeutic Massage" data-fr="Massage Thérapeutique">Therapeutic Massage</h3>
       <p class="lang" data-en="Targeted massage to alleviate pain and improve mobility." data-fr="Massage ciblé pour soulager la douleur et améliorer la mobilité.">
         Targeted massage to alleviate pain and improve mobility.
       </p>
     </div>
-    <div class="card">
-      <img id="randomImg" src="" alt="Aromatherapy">
+
+    <div class="card" itemscope itemtype="https://schema.org/ImageObject">
+      <img id="randomImg" src=""
+           alt="Aromatherapy using essential oils for relaxation and wellness" 
+           itemprop="contentUrl">
+      <meta itemprop="name" content="Aromatherapy">
+      <meta itemprop="description" content="Using essential oils for relaxation and wellness">
       <h3 class="lang" data-en="Aromatherapy" data-fr="Aromathérapie">Aromatherapy</h3>
       <p class="lang" data-en="Using essential oils for relaxation and wellness." data-fr="Utilisation d'huiles essentielles pour la détente et le bien-être.">
         Using essential oils for relaxation and wellness.
@@ -68,18 +88,45 @@
   </div>
 </section>
 
+
+
 <!-- GALERIA -->
+
 <section id="fotos">
   <h2 class="lang" data-en="Gallery" data-fr="Galerie">Gallery</h2>
   <div class="galeria">
-    <img id="randomImg" src="" alt="Foto 1" class="gallery-item">
-    <img id="randomImg" src="" alt="Foto 2" class="gallery-item">
-    <img id="randomImg" src="" alt="Foto 3" class="gallery-item">
-    <img id="randomImg" src="" alt="Foto 4" class="gallery-item">
-    <img id="randomImg" src="" alt="Foto 5" class="gallery-item">
-    <img id="randomImg" src="" alt="Foto 6" class="gallery-item">
-    <img id="randomImg" src="" alt="Foto 7" class="gallery-item">
-    <img id="randomImg" src="" alt="Foto 8" class="gallery-item">
+    <div itemscope itemtype="https://schema.org/ImageObject">
+      <img id="randomImg" src=""
+           alt="Massage session photo 1" 
+           class="gallery-item" 
+           itemprop="contentUrl">
+      <meta itemprop="name" content="Massage Session 1">
+      <meta itemprop="description" content="Image of massage session 1">
+    </div>
+    <div itemscope itemtype="https://schema.org/ImageObject">
+      <img id="randomImg" src="" 
+           alt="Massage session photo 2" 
+           class="gallery-item" 
+           itemprop="contentUrl">
+      <meta itemprop="name" content="Massage Session 2">
+      <meta itemprop="description" content="Image of massage session 2">
+    </div>
+    <div itemscope itemtype="https://schema.org/ImageObject">
+      <img id="randomImg" src=""
+           alt="Massage session photo 3" 
+           class="gallery-item" 
+           itemprop="contentUrl">
+      <meta itemprop="name" content="Massage Session 3">
+      <meta itemprop="description" content="Image of massage session 3">
+    </div>
+    <div itemscope itemtype="https://schema.org/ImageObject">
+      <img id="randomImg" src=""
+           alt="Massage session photo 4" 
+           class="gallery-item" 
+           itemprop="contentUrl">
+      <meta itemprop="name" content="Massage Session 4">
+      <meta itemprop="description" content="Image of massage session 4">
+    </div>
   </div>
 </section>
 
@@ -98,14 +145,8 @@
 <section id="contato">
   <h2 class="lang" data-en="Contact Me" data-fr="Contactez-moi">Contact Me</h2>
   <div class="socials">
-    <!--<a href="https://www.instagram.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" /></a>-->
-    <!--<a href="https://www.facebook.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook" /></a>-->
-    <a href="https://wa.me/447873693385" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" /></a>
-     <a href="https://onlyfans.com/shamiramodel" target="_blank"><img src="img/icons8-onlyfans-48.png" alt="WhatsApp" /></a>
-    <!--<a href="viber://chat?number=+447873693385" target="_blank"><img src="https://img.icons8.com/color/48/000000/viber.png" alt="Viber" /></a>-->
-    <!--<a href="https://t.me/username" target="_blank"><img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram" /></a>-->
-    <!--<a href="https://www.paypal.com/donate" target="_blank"><img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" /></a>-->
-    <!--<a href="https://www.patreon.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/patreon.png" alt="Patreon" /></a>--> 
+  <a href="https://wa.me/447873693385" target="_blank"><img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" /></a>
+    <a href="https://onlyfans.com/shamiramodel" target="_blank"><img src="img/icons8-onlyfans-48.png" alt="WhatsApp" /></a>
   </div>
 </section>
 
