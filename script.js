@@ -1,12 +1,29 @@
 // ================= TEMA ESCURO =================
 const btnTema = document.getElementById('btnTema');
+
+// carregar tema salvo
+if (localStorage.getItem('tema') === 'dark') {
+  document.body.classList.add('dark');
+  btnTema.textContent = '☀️ Light Mode';
+}
+
 btnTema.addEventListener('click', () => {
   document.body.classList.toggle('dark');
-  btnTema.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  const dark = document.body.classList.contains('dark');
+  btnTema.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
+  localStorage.setItem('tema', dark ? 'dark' : 'light');
 });
 
 // ================= IDIOMA =================
 const btnIdioma = document.getElementById('btnIdioma');
+
+window.addEventListener('DOMContentLoaded', () => {
+  const lang = btnIdioma.textContent === 'FR' ? 'en' : 'fr';
+  document.querySelectorAll('.lang').forEach(el => {
+    el.textContent = el.getAttribute(`data-${lang}`);
+  });
+});
+
 btnIdioma.addEventListener('click', () => {
   const lang = btnIdioma.textContent === 'FR' ? 'fr' : 'en';
   document.querySelectorAll('.lang').forEach(el => {
@@ -68,4 +85,9 @@ nextBtn.addEventListener('click', () => {
 // Fechar modal com ESC
 document.addEventListener('keydown', (e) => {
   if(e.key === 'Escape') closeModal();
+});
+
+// Fechar modal clicando fora da imagem
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal();
 });
