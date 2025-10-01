@@ -136,7 +136,16 @@ function setRandomImage(imgElement, deterministic = true) {
 document.querySelectorAll('img[id^="randomImg"]').forEach(img => setRandomImage(img));
 
 
-document.getElementById("whatsappBtn").addEventListener("click", function(e) {
+document.getElementById("whatsappBtn1").addEventListener("click", function(e) {
+    // opcional: abrir em nova aba manualmente
+    window.open(this.href, "_blank"); 
+    // redireciona na aba atual
+    window.location.href = "https://professionalmassage.uk/thankyou";
+    // impede comportamento padrão do link
+    e.preventDefault();
+});
+
+document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
     // opcional: abrir em nova aba manualmente
     window.open(this.href, "_blank"); 
     // redireciona na aba atual
