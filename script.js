@@ -134,3 +134,14 @@ function setRandomImage(imgElement, deterministic = true) {
 
 // Aplica para todas imagens com id começando com "randomImg"
 document.querySelectorAll('img[id^="randomImg"]').forEach(img => setRandomImage(img));
+
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault(); // evita reload imediato
+    // aqui você faria o envio real via API, Formspree, Netlify, etc.
+    
+    // simulação de envio com timeout
+    setTimeout(function(){
+        window.location.href = "thankyou.html"; // redireciona para a página de obrigado
+    }, 500); 
+});
