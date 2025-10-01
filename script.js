@@ -139,15 +139,31 @@ document.querySelectorAll('img[id^="randomImg"]').forEach(img => setRandomImage(
 // Hamburger toggle
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
+const overlay = document.getElementById('overlay');
+const closeBtn = document.getElementById('closeBtn');
 
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  navLinks.classList.add('active');
+  overlay.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+  navLinks.classList.remove('active');
+  overlay.classList.remove('active');
+});
+
+overlay.addEventListener('click', () => {
+  navLinks.classList.remove('active');
+  overlay.classList.remove('active');
 });
 
 // Fechar menu ao clicar em link
 document.querySelectorAll('#navLinks a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('active');
+    overlay.classList.remove('active');
   });
 });
+
+
 
