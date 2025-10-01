@@ -153,14 +153,3 @@ document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
     // impede comportamento padrão do link
     e.preventDefault();
 });
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3CSYC9FME0">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3CSYC9FME0');
-</script>
