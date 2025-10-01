@@ -10,7 +10,7 @@ if (localStorage.getItem('tema') === 'dark') {
 btnTema.addEventListener('click', () => {
   document.body.classList.toggle('dark');
   const dark = document.body.classList.contains('dark');
-  btnTema.textContent = dark ? '☀️' : '🌙';
+  btnTema.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
   localStorage.setItem('tema', dark ? 'dark' : 'light');
 });
 
