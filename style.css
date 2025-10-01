@@ -226,3 +226,75 @@ body.dark header p {
   }
 }
 
+/* ================= FORMULÁRIO ================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+  padding: 25px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 0px 12px 0px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  resize: none;
+  transition: all 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--link-hover);
+  box-shadow: 0 0 5px rgba(123, 138, 118, 0.4);
+  outline: none;
+}
+
+.contact-form button {
+  padding: 14px;
+  background: var(--link-hover);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background: #7b8a76;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 20px;
+     margin: 15px; /* <<< dá um respiro lateral */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}
