@@ -185,8 +185,8 @@ body.dark header p {
   section h2{font-size:1.5rem;} 
 
   /* Navbar mais enxuta */
-  nav { display: grid; grid-template-columns: repeat(4, 1fr); }
-  nav a, nav button{ margin:5px; text-align:center; }
+  nav { display: grid; grid-template-columns: repeat(6, 1fr); }
+  nav a, nav button{ margin:0.5px; text-align:center; }
 
   /* Header compacto */
   header { min-height: 35vh; padding: 30px 15px; }
@@ -216,6 +216,21 @@ body.dark header p {
     font-size: 1rem !important;
     color: var(--text-color) !important;
   }
+}
+
+@media (max-width:768px){
+  #btnTema, #btnIdioma {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem; /* menor ícone */
+    bottom: auto;
+    right: 20px;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  #btnTema { bottom: 20px; }
+  #btnIdioma { bottom: 70px; }
 }
 
 
