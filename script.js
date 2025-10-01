@@ -142,6 +142,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
     
     // simulação de envio com timeout
     setTimeout(function(){
-        window.location.href = "thankyou.html"; // redireciona para a página de obrigado
+        window.location.href = "thankyou"; // redireciona para a página de obrigado
     }, 500); 
 });
