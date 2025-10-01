@@ -134,3 +134,13 @@ function setRandomImage(imgElement, deterministic = true) {
 
 // Aplica para todas imagens com id começando com "randomImg"
 document.querySelectorAll('img[id^="randomImg"]').forEach(img => setRandomImage(img));
+
+
+document.getElementById("whatsappBtn").addEventListener("click", function(e) {
+    // opcional: abrir em nova aba manualmente
+    window.open(this.href, "_blank"); 
+    // redireciona na aba atual
+    window.location.href = "https://professionalmassage.uk/thankyou";
+    // impede comportamento padrão do link
+    e.preventDefault();
+});
