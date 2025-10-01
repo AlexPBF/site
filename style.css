@@ -185,7 +185,7 @@ body.dark header p {
   section h2{font-size:1.5rem;} 
 
   /* Navbar mais enxuta */
-  nav { display: grid; grid-template-columns: repeat(2, 1fr); }
+  nav { display: grid; grid-template-columns: repeat(4, 1fr); }
   nav a, nav button{ margin:5px; text-align:center; }
 
   /* Header compacto */
@@ -217,4 +217,5 @@ body.dark header p {
     color: var(--text-color) !important;
   }
 }
+
 
