@@ -133,37 +133,4 @@ function setRandomImage(imgElement, deterministic = true) {
 }
 
 // Aplica para todas imagens com id começando com "randomImg"
-
 document.querySelectorAll('img[id^="randomImg"]').forEach(img => setRandomImage(img));
-
-// Hamburger toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-const overlay = document.getElementById('overlay');
-const closeBtn = document.getElementById('closeBtn');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.add('active');
-  overlay.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-  navLinks.classList.remove('active');
-  overlay.classList.remove('active');
-});
-
-overlay.addEventListener('click', () => {
-  navLinks.classList.remove('active');
-  overlay.classList.remove('active');
-});
-
-// Fechar menu ao clicar em link
-document.querySelectorAll('#navLinks a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    overlay.classList.remove('active');
-  });
-});
-
-
-
