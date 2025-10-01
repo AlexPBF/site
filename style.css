@@ -217,5 +217,12 @@ body.dark header p {
     color: var(--text-color) !important;
   }
 }
-
+@media (max-width:768px){
+  nav a[href="#sobre"],
+  nav a[href="#contato"],
+  nav a[href="#servicos"],
+  nav a[href="#fotos"] {
+    display: none;
+  }
+}
 
