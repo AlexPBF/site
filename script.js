@@ -163,5 +163,5 @@ document.getElementById("mapOverlay").addEventListener("click", function() {
     });
 
     // Opcional: abre o Google Maps real em nova aba
-    window.open("https://www.google.com/maps?q=Professional+Massage+UK", "_blank");
+    window.open("https://www.google.com/maps/place/Professional+Massage+UK/@51.5287516,-0.0966707,17z/data=!3m1!4b1!4m6!3m5!1s0x48761b081c4414e1:0x396be88be7f009a7!8m2!3d51.5287516!4d-0.0966707!16s%2Fg%2F11zj97z5yz?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D", "_blank");
 });
