@@ -154,8 +154,8 @@ document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
     e.preventDefault();
 });
 
-<script>
-  document.getElementById("mapOverlay").addEventListener("click", function() {
+
+document.getElementById("mapOverlay").addEventListener("click", function() {
     // Envia evento para GTM
     dataLayer.push({
       event: "interesse_mapa",
@@ -164,5 +164,4 @@ document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
 
     // Opcional: abre o Google Maps real em nova aba
     // window.open("https://www.google.com/maps?q=Professional+Massage+UK", "_blank");
-  });
-</script>
+});
