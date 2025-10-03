@@ -215,21 +215,27 @@ footer {
 
 /* ================= BOOK ================= */
 
-.btn-book {
+.book-btn {
   display: inline-block;
-  background: #fff;
-  color: #7b8a76;
-  padding: 8px 16px;
-  border-radius: 20px;
+  background: #e63946; /* vermelho elegante */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  margin-bottom: 10px;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
-.btn-book:hover {
-  background: #ddd;
+.book-btn:hover {
+  background: #c91832;
 }
+
+.book-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ================= TEMA ESCURO ================= */
 body.dark { 
   --bg-color:#121212; 
