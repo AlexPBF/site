@@ -238,8 +238,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.153105179811!2d-0.09667069999999998!3d51.5287516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b081c4414e1%3A0x396be88be7f009a7!2sProfessional%20Massage%20UK!5e0!3m2!1sen-GB!2suk!4v1759359877868!5m2!1sen-GB!2suk" 
       width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
     </iframe>
-<!-- Overlay invisível -->
-    <div id="mapOverlay" style="position: absolute; top:0; left:0; width:100%; height:100%; cursor:pointer;"></div>
+
+    <!-- Overlay com botão -->
+    <div id="mapOverlay" 
+         style="position: absolute; top:0; left:0; width:100%; height:100%; 
+                background-color: rgba(0,0,0,0.2); display:flex; justify-content:center; 
+                align-items:center; cursor:pointer;">
+      <button style="padding: 12px 24px; font-size:16px; background-color:#4285F4; 
+                     color:#fff; border:none; border-radius:5px; cursor:pointer;">
+        Ver no Google Maps
+      </button>
+    </div>
+
   </div>
 </section>
 
