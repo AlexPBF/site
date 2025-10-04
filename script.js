@@ -137,21 +137,45 @@ document.querySelectorAll('img[id^="randomImg"]').forEach(img => setRandomImage(
 
 
 document.getElementById("whatsappBtn1").addEventListener("click", function(e) {
-    // opcional: abrir em nova aba manualmente
-    window.open(this.href, "_blank"); 
-    // redireciona na aba atual
+  e.preventDefault();
+
+  // dispara o evento para o Google Tag Manager
+  dataLayer.push({
+    event: "whatsapp_click",
+    event_callback: function() {
+      // redireciona após o callback do GA/GTM
+      window.location.href = "https://professionalmassage.uk/thankyou";
+    },
+  });
+
+  // fallback caso o callback não retorne (segurança)
+  setTimeout(function() {
     window.location.href = "https://professionalmassage.uk/thankyou";
-    // impede comportamento padrão do link
-    e.preventDefault();
+  }, 400);
+
+  // opcional: abrir WhatsApp em nova aba
+  window.open("https://wa.me/447873693385", "_blank");
 });
 
 document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
-    // opcional: abrir em nova aba manualmente
-    window.open(this.href, "_blank"); 
-    // redireciona na aba atual
+  e.preventDefault();
+
+  // dispara o evento para o Google Tag Manager
+  dataLayer.push({
+    event: "whatsapp_click",
+    event_callback: function() {
+      // redireciona após o callback do GA/GTM
+      window.location.href = "https://professionalmassage.uk/thankyou";
+    },
+  });
+
+  // fallback caso o callback não retorne (segurança)
+  setTimeout(function() {
     window.location.href = "https://professionalmassage.uk/thankyou";
-    // impede comportamento padrão do link
-    e.preventDefault();
+  }, 400);
+
+  // opcional: abrir WhatsApp em nova aba
+  window.open("https://wa.me/33781854213", "_blank");
 });
 
 
