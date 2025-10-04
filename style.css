@@ -278,10 +278,10 @@ footer {
 }
 
 .star-icon {
-  color: #fff; /* estrela branca para contraste */
-  font-size: 18px;
+  width: 18px;
+  height: 18px;
   margin-right: 8px;
-  text-shadow: 0 0 3px rgba(0,0,0,0.2);
+  flex-shrink: 0;
 }
 
 /* ================= TEMA ESCURO ================= */
