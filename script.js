@@ -154,7 +154,7 @@ document.getElementById("whatsappBtn1").addEventListener("click", function(e) {
   }, 400);
 
   // opcional: abrir WhatsApp em nova aba
-  window.open("https://wa.me/447873693385", "_blank");
+  //window.open("https://wa.me/447873693385", "_blank");
 });
 
 document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
@@ -175,7 +175,7 @@ document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
   }, 400);
 
   // opcional: abrir WhatsApp em nova aba
-  window.open("https://wa.me/33781854213", "_blank");
+  //window.open("https://wa.me/33781854213", "_blank");
 });
 
 
