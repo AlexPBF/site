@@ -151,10 +151,10 @@ document.getElementById("whatsappBtn1").addEventListener("click", function(e) {
   // fallback caso o callback não retorne (segurança)
   setTimeout(function() {
     window.location.href = "https://professionalmassage.uk/thankyou";
-  }, 400);
+  }, 1000);
 
   // opcional: abrir WhatsApp em nova aba
-  //window.open("https://wa.me/447873693385", "_blank");
+  window.open("https://wa.me/447873693385", "_blank");
 });
 
 document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
@@ -172,10 +172,10 @@ document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
   // fallback caso o callback não retorne (segurança)
   setTimeout(function() {
     window.location.href = "https://professionalmassage.uk/thankyou";
-  }, 400);
+  }, 1000);
 
   // opcional: abrir WhatsApp em nova aba
-  //window.open("https://wa.me/33781854213", "_blank");
+  window.open("https://wa.me/33781854213", "_blank");
 });
 
 
