@@ -140,7 +140,7 @@ document.getElementById("whatsappBtn1").addEventListener("click", function(e) {
     // opcional: abrir em nova aba manualmente
     window.open(this.href, "_blank"); 
     // redireciona na aba atual
-    window.location.href = "https://professionalmassage.uk/thankyou";
+    //window.location.href = "https://professionalmassage.uk/thankyou";
     // impede comportamento padrão do link
     e.preventDefault();
 });
@@ -149,7 +149,7 @@ document.getElementById("whatsappBtn2").addEventListener("click", function(e) {
     // opcional: abrir em nova aba manualmente
     window.open(this.href, "_blank"); 
     // redireciona na aba atual
-    window.location.href = "https://professionalmassage.uk/thankyou";
+    //window.location.href = "https://professionalmassage.uk/thankyou";
     // impede comportamento padrão do link
     e.preventDefault();
 });
